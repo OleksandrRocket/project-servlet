@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class Field {
     private final Map<Integer, Sign> field;
+    String string;
 
     public Field() {
         field = new HashMap<>();
@@ -30,6 +31,7 @@ public class Field {
                 .filter(e -> e.getValue() == Sign.EMPTY)
                 .map(Map.Entry::getKey)
                 .findFirst().orElse(-1);
+
     }
 
     public List<Sign> getFieldData() {
@@ -37,6 +39,7 @@ public class Field {
                 .sorted(Map.Entry.comparingByKey())
                 .map(Map.Entry::getValue)
                 .collect(Collectors.toList());
+
     }
 
     public Sign checkWin() {
