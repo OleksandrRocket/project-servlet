@@ -1,4 +1,7 @@
-package com.tictactoe;
+package com.tictactoe.servlets;
+
+import com.tictactoe.Field;
+import com.tictactoe.Sign;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +22,6 @@ public class InitServlet extends HttpServlet {
         List<Sign> data = field.getFieldData();
         session.setAttribute("field", field);
         session.setAttribute("data", data);
-        getServletContext().getRequestDispatcher("index.jsp").forward(req, res);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req, res);
     }
 }

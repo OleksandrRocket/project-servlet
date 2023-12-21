@@ -1,4 +1,7 @@
-package com.tictactoe;
+package com.tictactoe.servlets;
+
+import com.tictactoe.Field;
+import com.tictactoe.Sign;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,6 +34,12 @@ public class LogicServlet extends HttpServlet {
             if (checkWin(res, session, field)) {
                 return;
             }
+        } else {
+            session.setAttribute("draw", true);
+            List<Sign> data = field.getFieldData();
+            session.setAttribute("data", data);
+            res.sendRedirect("/index.jsp");
+            return;
         }
         List<Sign> data = field.getFieldData();
         session.setAttribute("field", field);
