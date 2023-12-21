@@ -9,6 +9,7 @@
     <link href="static/main.css" rel="stylesheet">
     <title>Tic-Tac-Toe</title>
 </head>
+
 <body>
 <h1>Tic-Tac-Toe</h1>
 
@@ -33,12 +34,10 @@
 <hr>
 <c:set var="CROSS" value="<%=Sign.CROSS%>"/>
 <c:set var="NOUGHT" value="<%=Sign.NOUGHT%>"/>
-
 <c:if test="${winner==CROSS}">
     <h1>CROSS WIN</h1>
     <button onclick="restart()">Start again</button>
 </c:if>
-
 <c:if test="${winner == NOUGHT}">
     <h1>NOUGHT WIN</h1>
     <button onclick="restart()">Start again</button>
@@ -47,7 +46,6 @@
     <h1>DRAW</h1>
     <button onclick="restart()">Start again</button>
 </c:if>
-
 
 <script>
     function restart() {
@@ -61,8 +59,6 @@
             }
         });
     }
-
 </script>
-
 </body>
 </html>
